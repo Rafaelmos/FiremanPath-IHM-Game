@@ -3,14 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Rafael/Documents/NetBeansProjects/JavaApplication1/src/main/Player.java</file>
+            <file>file:/C:/Users/Rafael/Documents/NetBeansProjects/JavaApplication1/src/main/Menu.java</file>
             <file>file:/C:/Users/Rafael/Documents/NetBeansProjects/JavaApplication1/src/main/Main.java</file>
-            <file>file:/C:/Users/Rafael/Documents/NetBeansProjects/JavaApplication1/src/main/KeyHandler.java</file>
-            <file>file:/C:/Users/Rafael/Documents/NetBeansProjects/JavaApplication1/src/tile/Tile.java</file>
+            <file>file:/C:/Users/Rafael/Documents/NetBeansProjects/JavaApplication1/src/main/res/menu/gamestart.png</file>
             <file>file:/C:/Users/Rafael/Documents/NetBeansProjects/JavaApplication1/src/main/GamePanel.java</file>
             <file>file:/C:/Users/Rafael/Documents/NetBeansProjects/JavaApplication1/src/tile/TileManager.java</file>
             <file>file:/C:/Users/Rafael/Documents/NetBeansProjects/JavaApplication1/src/main/Entity.java</file>
             <file>file:/C:/Users/Rafael/Documents/NetBeansProjects/JavaApplication1/src/tile/res/tiles/inv2.png</file>
+            <file>file:/C:/Users/Rafael/Documents/NetBeansProjects/JavaApplication1/src/tile/res/tiles/tv.png</file>
+            <file>file:/C:/Users/Rafael/Documents/NetBeansProjects/JavaApplication1/src/main/Player.java</file>
+            <file>file:/C:/Users/Rafael/Documents/NetBeansProjects/JavaApplication1/src/main/KeyHandler.java</file>
+            <file>file:/C:/Users/Rafael/Documents/NetBeansProjects/JavaApplication1/src/tile/Tile.java</file>
+            <file>file:/C:/Users/Rafael/Documents/NetBeansProjects/JavaApplication1/src/tile/res/tiles/up.png</file>
+            <file>file:/C:/Users/Rafael/Documents/NetBeansProjects/JavaApplication1/src/main/MenuPanel.java</file>
         </group>
     </open-files>
 </project-private>

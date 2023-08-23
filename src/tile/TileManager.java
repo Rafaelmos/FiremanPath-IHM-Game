@@ -35,7 +35,7 @@ public class TileManager {
             tile[1] = new Tile();tile[1].image = ImageIO.read(getClass().getResourceAsStream("res/tiles/chair.png"));
             inter[0] = new Tile();inter[0].image = ImageIO.read(getClass().getResourceAsStream("res/tiles/inv.png"));
             inter[1] = new Tile();inter[1].image = ImageIO.read(getClass().getResourceAsStream("res/tiles/inv2.png"));
-            inter[2] = new Tile();inter[2].image = ImageIO.read(getClass().getResourceAsStream("res/tiles/down.png"));
+            //inter[2] = new Tile();inter[2].image = ImageIO.read(getClass().getResourceAsStream("res/tiles/down.png"));
 
             
         } catch (Exception e) {
@@ -47,6 +47,7 @@ public class TileManager {
     
     public void draw(Graphics2D g2){
             
+
         g2.drawImage(tile[0].image, 0,0, gp.tileSize, gp.tileSize, null);
         g2.drawImage(tile[0].image, 64,0, gp.tileSize, gp.tileSize, null);
         g2.drawImage(tile[0].image, 128,0, gp.tileSize, gp.tileSize, null);

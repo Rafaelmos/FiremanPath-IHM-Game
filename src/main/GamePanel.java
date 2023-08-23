@@ -8,6 +8,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.event.MouseListener;
 import javax.swing.JPanel;
 import tile.TileManager;
 
@@ -16,7 +17,6 @@ import tile.TileManager;
  * @author Rafael
  */
 public class GamePanel extends JPanel implements Runnable{
-    
     final int originalTitleSize = 32;
     final int scale = 2;
     
@@ -36,6 +36,7 @@ public class GamePanel extends JPanel implements Runnable{
     int playerX = 100;
     int playerY = 100;
     int playerSpeed = 8;
+    
     
     public GamePanel() {
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));

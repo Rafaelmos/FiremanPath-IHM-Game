@@ -35,6 +35,7 @@ public class TileManager {
             tile[1] = new Tile();tile[1].image = ImageIO.read(getClass().getResourceAsStream("res/tiles/chair.png"));
             inter[0] = new Tile();inter[0].image = ImageIO.read(getClass().getResourceAsStream("res/tiles/inv.png"));
             inter[1] = new Tile();inter[1].image = ImageIO.read(getClass().getResourceAsStream("res/tiles/inv2.png"));
+            inter[2] = new Tile();inter[2].image = ImageIO.read(getClass().getResourceAsStream("res/tiles/down.png"));
 
             
         } catch (Exception e) {
@@ -103,8 +104,21 @@ public class TileManager {
         g2.drawImage(tile[0].image,  576,256, gp.tileSize, gp.tileSize, null);
 
         //g2.drawImage(tile[1].image,  576,256, gp.tileSize, gp.tileSize, null);
-        g2.drawImage(inter[0].image,  640,0, 192, 576, null);
-        g2.drawImage(inter[1].image,  0,320, 640, 128, null);
+        g2.drawImage(inter[0].image,  640,0, 192, 576, null); //menu direito
+        g2.drawImage(inter[1].image,  0,320, 640, 128, null); //menu esquerdo
+        
+        //g2.drawImage(inter[2].image,  29,364, 32, 32, null);  //0
+        //g2.drawImage(inter[2].image,  87,364, 32, 32, null);  //1
+        //g2.drawImage(inter[2].image,  148,364, 32, 32, null); //2
+        //g2.drawImage(inter[2].image,  148,364, 32, 32, null); //3
+        //g2.drawImage(inter[2].image,  212,364, 32, 32, null); //4
+        //g2.drawImage(inter[2].image,  272,364, 32, 32, null); //5
+        //g2.drawImage(inter[2].image,  333,364, 32, 32, null); //6
+        //g2.drawImage(inter[2].image,  395,364, 32, 32, null); //7
+        //g2.drawImage(inter[2].image,  456,364, 32, 32, null); //8
+        //g2.drawImage(inter[2].image,  517,364, 32, 32, null); //9
+        //g2.drawImage(inter[2].image,  580,364, 32, 32, null); //10
+
 
                 }
 }

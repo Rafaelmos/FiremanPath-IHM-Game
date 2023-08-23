@@ -57,19 +57,33 @@ public class Player extends Entity {
     public void update() {
         if (gp.keyH.pUP == true) {
             direction = "up";
-            y -= speed;
+            if (y <=0) {
+                y=0;
+            } else {
+                        y -= speed;
+}
         }
         if (gp.keyH.pDOWN == true) {
             direction = "down";
-            y += speed;
+            if (y >=256) {
+                y=256;
+            } else {y += speed;}
         }
         if (gp.keyH.pRIGHT == true) {
             direction = "right";
-            x += speed;
+            if (x >=576) {
+                x=576;
+            } else {
+            
+            x += speed;}
         }
         if (gp.keyH.pLEFT == true) {
             direction = "left";
-            x -= speed;
+            
+            if (x <=0) {
+                x=0;
+            } else {
+            x -= speed;}
         }
 
         if (gp.keyH.pUP || gp.keyH.pDOWN || gp.keyH.pRIGHT || gp.keyH.pLEFT) {

@@ -16,10 +16,13 @@ public class TileManager {
     
     GamePanel gp;
     Tile[] tile;
+    Tile[] inter;
+
 
     public TileManager(GamePanel gp) {
         this.gp = gp;
         this.tile = new Tile[10];
+        this.inter = new Tile[10];
         
         getTileImage();
     }
@@ -29,7 +32,10 @@ public class TileManager {
     
         try {
             tile[0] = new Tile();tile[0].image = ImageIO.read(getClass().getResourceAsStream("res/tiles/floor.png"));
-            //tile[0].image = ImageIO.read(getClass().getResourceAsStream("res/player/down_3.png"));
+            tile[1] = new Tile();tile[1].image = ImageIO.read(getClass().getResourceAsStream("res/tiles/chair.png"));
+            inter[0] = new Tile();inter[0].image = ImageIO.read(getClass().getResourceAsStream("res/tiles/inv.png"));
+            inter[1] = new Tile();inter[1].image = ImageIO.read(getClass().getResourceAsStream("res/tiles/inv2.png"));
+
             
         } catch (Exception e) {
             e.printStackTrace();
@@ -96,6 +102,9 @@ public class TileManager {
         g2.drawImage(tile[0].image,  512,256, gp.tileSize, gp.tileSize, null);
         g2.drawImage(tile[0].image,  576,256, gp.tileSize, gp.tileSize, null);
 
-        
+        //g2.drawImage(tile[1].image,  576,256, gp.tileSize, gp.tileSize, null);
+        g2.drawImage(inter[0].image,  640,0, 192, 576, null);
+        g2.drawImage(inter[1].image,  0,320, 640, 128, null);
+
                 }
 }

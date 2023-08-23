@@ -4,7 +4,6 @@
  */
 package main;
 
-import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
@@ -28,15 +27,15 @@ public class Player extends Entity {
     }
 
     public void setDefaultValues() {
-        x = 100;
-        y = 100;
-        speed = 4;
+        x = 128;
+        y = 128;
+        speed = 16;
     }
 
     public void getPlayerImage() {
 
         try {
-            up1 = ImageIO.read(getClass().getResourceAsStream("res/player/up_1.png"));
+            up1 = ImageIO.read(getClass().getResourceAsStream("./res/player/up_1.png"));
             up2 = ImageIO.read(getClass().getResourceAsStream("res/player/up_2.png"));
             up3 = ImageIO.read(getClass().getResourceAsStream("res/player/up_3.png"));
             down1 = ImageIO.read(getClass().getResourceAsStream("res/player/down_1.png"));
@@ -75,7 +74,7 @@ public class Player extends Entity {
 
         if (gp.keyH.pUP || gp.keyH.pDOWN || gp.keyH.pRIGHT || gp.keyH.pLEFT) {
             spriteCounter++;
-            if (spriteCounter > 10) {
+            if (spriteCounter > 5) {
                 switch (spriteNumber) {
                     case 1:
                         spriteNumber = 2;

@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import tile.Objts;
 import tile.TileManager;
@@ -21,6 +22,9 @@ import tile.TileManager;
  * @author Rafael
  */
 public class GamePanel extends JPanel implements Runnable{
+    
+     public int fase = 3;
+
     final int originalTitleSize = 32;
     final int scale = 2;
     public final int tileSize = originalTitleSize * scale;
@@ -36,13 +40,27 @@ public class GamePanel extends JPanel implements Runnable{
     KeyHandler keyH = new KeyHandler();
     Thread gameThread;
     public Player player = new Player(this, keyH);
-    public int fase = 1;
     int playerX = 100;
     int playerY = 100;
     int playerSpeed = 8;
     
     
     Objts madeira1 = new Objts(this, 0, 20, 40);
+    Objts madeira2 = new Objts(this, 0, 212, 168);
+    
+    
+    Objts madeira3 = new Objts(this, 0, 212, 102);
+    Objts tv1 = new Objts(this, 1, 276, 232);
+    Objts tv2 = new Objts(this, 1, 340, 40);
+
+    Objts madeira4 = new Objts(this, 0, 20, 40);
+    Objts madeira5 = new Objts(this, 0, 212, 102);
+    Objts tv3 = new Objts(this, 1, 532, 230);
+    Objts tv4 = new Objts(this, 1, 340, 40);
+    Objts barril1 = new Objts(this, 2, 450, 120);
+
+    
+
     
     
     
@@ -90,7 +108,22 @@ public class GamePanel extends JPanel implements Runnable{
     public void update(){
         player.update();
         try {
-            madeira1.update(0);
+            if (fase == 1) {
+            madeira1.update();
+            madeira2.update();
+            }
+            if (fase == 2) {
+            madeira3.update();
+            tv1.update();
+            tv2.update();
+            }
+            if (fase == 3) {
+            madeira4.update();
+            madeira5.update();
+            tv3.update();
+            tv4.update();
+            barril1.update();
+            }
         } catch (IOException ex) {
             Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -117,21 +150,42 @@ public class GamePanel extends JPanel implements Runnable{
         if (fase == 1) {
             
             madeira1.draw(g2);
+            madeira2.draw(g2);
            // System.out.println("main.GamePanel.paintComponent()");
             
          //if (x        >= 672 && x <= 728 && y >= 10 && y <= 40) {
            if (player.x >= 0 && player.x <= 64 && player.y >= 64 && player.y <= 128){
                 if (this.red==true) {
                     madeira1.fire = false;
-
-               }
-                       
-                //System.out.println(this.red);
-                this.red = false;
+                    this.red = false;
                 this.yellow = false;
                 this.black = false;
-           
+
+               }   
+                //System.out.println(this.red);
+                
            }
+           if (player.x >= 192 && player.x <= 256 && player.y >= 192 && player.y <= 256){
+                if (this.red==true) {
+                    madeira2.fire = false;
+                    this.red = false;
+                this.yellow = false;
+                this.black = false;
+
+               }   
+                //System.out.println(this.red);
+       
+           }
+           
+           if (madeira1.fire==false && madeira2.fire==false){
+              
+               fase = 2;
+               madeira1 = null;
+               madeira2 = null;
+           }
+           
+           
+             
                 
 
             
@@ -139,11 +193,129 @@ public class GamePanel extends JPanel implements Runnable{
         
         if (fase == 2) {
             
-            
+            madeira3.draw(g2);
+            tv1.draw(g2);
+            tv2.draw(g2);
+            if (player.x >= 192 && player.x <= 256 && player.y >= 128 && player.y <= 192){
+
+                if (this.red==true) {
+                    madeira3.fire = false;
+                    this.red = false;
+                this.yellow = false;
+                this.black = false;
+               }     
+            } 
+            if (player.x >= 256 && player.x <= 320 && player.y >= 256 && player.y <= 322){
+
+                if (this.black==true) {
+                    tv1.fire = false;
+                    this.red = false;
+                this.yellow = false;
+                this.black = false;
+               }     
+            } 
+            if (player.x >= 320 && player.x <= 384 && player.y >= 64 && player.y <= 128){
+
+                if (this.black==true) {
+                    tv2.fire = false;
+                    this.red = false;
+                    this.yellow = false;
+                    this.black = false;
+               }     
+            } 
+                    this.red = false;
+                    this.yellow = false;
+                    this.black = false;
+                
+                
+                 if (madeira3.fire==false && tv1.fire==false && tv2.fire==false){
+              
+               fase = 3;
+               madeira3 = null;
+               tv1 = null;
+               tv2 = null;
+           }
+
         }
         
          if (fase == 3) {
+            madeira4.draw(g2);
+            madeira5.draw(g2);
+            tv3.draw(g2);
+            tv4.draw(g2);
+            barril1.draw(g2);
+             
             
+            if (player.x >= 192 && player.x <= 256 && player.y >= 128 && player.y <= 192){
+
+                if (this.red==true) {
+                    madeira5.fire = false;
+                    this.red = false;
+                this.yellow = false;
+                this.black = false;
+               }     
+            } 
+            
+            
+             if (player.x >= 0 && player.x <= 64 && player.y >= 60 && player.y <= 128){
+
+                if (this.red==true) {
+                    madeira4.fire = false;
+                    this.red = false;
+                this.yellow = false;
+                this.black = false;
+               }     
+            } 
+             if (player.x >= 512 && player.x <= 576 && player.y >= 256 && player.y <= 322){
+
+                if (this.black==true) {
+                    tv3.fire = false;
+                    this.red = false;
+                this.yellow = false;
+                this.black = false;
+               }     
+            } 
+             
+             if (player.x >= 320 && player.x <= 384 && player.y >= 60 && player.y <= 128){
+
+                if (this.black==true) {
+                    tv4.fire = false;
+                    this.red = false;
+                this.yellow = false;
+                this.black = false;
+               }     
+            } 
+             if (player.x >= 448 && player.x <= 512 && player.y >= 128 && player.y <= 196){
+
+                if (this.yellow==true) {
+                    barril1.fire = false;
+                    this.red = false;
+                this.yellow = false;
+                this.black = false;
+               }     
+            }
+             this.red = false;
+                this.yellow = false;
+                this.black = false;
+             
+             
+            
+             
+             if (madeira4.fire==false && madeira5.fire==false && tv3.fire==false && tv4.fire==false && barril1.fire==false){
+              
+             int result = 99;
+             if (result==99){
+              result = 0;
+              result = JOptionPane.showConfirmDialog(null, "Você venceu! Parabéns?", "Vitória", JOptionPane.OK_CANCEL_OPTION);
+
+                if (result == JOptionPane.OK_OPTION) {
+        }
+             }
+             
+               
+           }
+            
+       
             
         }
         

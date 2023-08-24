@@ -52,13 +52,13 @@ public class Objts {
     }
     
     
-        public void update(int type) throws IOException {
+        public void update() throws IOException {
         
         if (type == 0 && fire == false) {
             tile.image = ImageIO.read(getClass().getResourceAsStream("res/tiles/chair.png"));
         }
         if (type == 1 && fire == false) {
-            tile.image = ImageIO.read(getClass().getResourceAsStream("res/tiles/tv.png"));
+            tile.image = ImageIO.read(getClass().getResourceAsStream("res/tiles/tv_1.png"));
 
         }
         if (type == 2 && fire == false) {

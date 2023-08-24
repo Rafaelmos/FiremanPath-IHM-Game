@@ -55,7 +55,7 @@ public class Main {
                     for (int i = 0; i < 10; i++) {
                         if (gp.player.rota[i] == null) {
                             gp.player.rota[i] = "left";
-                            System.out.println(i);
+                            //System.out.println(i);
                             break;
                         }
                     }
@@ -67,7 +67,7 @@ public class Main {
                     for (int i = 0; i < 10; i++) {
                         if (gp.player.rota[i] == null) {
                             gp.player.rota[i] = "right";
-                            System.out.println(i);
+                            //System.out.println(i);
                             break;
                         }
                     }
@@ -79,7 +79,7 @@ public class Main {
                     for (int i = 0; i < 10; i++) {
                         if (gp.player.rota[i] == null) {
                             gp.player.rota[i] = "up";
-                            System.out.println(i);
+                            //System.out.println(i);
                             break;
                         }
                     }
@@ -91,7 +91,7 @@ public class Main {
                     for (int i = 0; i < 10; i++) {
                         if (gp.player.rota[i] == null) {
                             gp.player.rota[i] = "down";
-                            System.out.println(i);
+                            //System.out.println(i);
                             break;
                         }
                     }
@@ -104,25 +104,25 @@ public class Main {
                     for (int i = 0; i < 10; i++) {
                         if (gp.player.rota[i] == null) {
                             gp.player.rota[i] = "e-red";
-                            System.out.println(i);
+                            //System.out.println(i);
                             break;
                         }
                     }
 
-                    System.out.println("EXTINTOR VERMELHO");
+                    //System.out.println("EXTINTOR VERMELHO");
                 }
                 if (x >= 744 && x <= 800 && y >= 228 && y <= 290) {
 
                     for (int i = 0; i < 10; i++) {
                         if (gp.player.rota[i] == null) {
                             gp.player.rota[i] = "e-yellow";
-                            System.out.println(i);
+                            //System.out.println(i);
                             break;
                         }
 
                     }
 
-                    System.out.println("EXTINTOR AMARELO");
+                    //System.out.println("EXTINTOR AMARELO");
                 }
 
                 if (x >= 744 && x <= 800 && y >= 310 && y <= 370) {
@@ -130,12 +130,12 @@ public class Main {
                     for (int i = 0; i < 10; i++) {
                         if (gp.player.rota[i] == null) {
                             gp.player.rota[i] = "e-black";
-                            System.out.println(i);
+                            //System.out.println(i);
                             break;
                         }
                     }
 
-                    System.out.println("EXTINTOR PRETO");
+                    //System.out.println("EXTINTOR PRETO");
                 }
 
                 if (x >= 672 && x <= 728 && y >= 393 && y <= 420) {
@@ -149,6 +149,7 @@ public class Main {
                         
                
                         for (String c : gp.player.rota) {
+                  
                             if (c == null) {
                                 //System.out.println("main.Player.update() " + c);
                                 break;
@@ -202,10 +203,7 @@ public class Main {
                             }
                             if (c.equals("e-red")) {
                                 gp.red = true;
-                                System.out.println(".                                gp.red = true;\n" +
-"()");
-                                
-                             
+    
                             }
                             
                             if (c.equals("e-yellow")) {
@@ -214,7 +212,9 @@ public class Main {
                             }
                              if (c.equals("e-black")) {
                                 gp.black = true;
-                            }     
+                                
+                            }
+                    
                              
 
 // System.out.println("main.Player.update() USANDO EXTINTOR " + c);
@@ -294,23 +294,7 @@ public class Main {
                         }
                     }*/
 
-                    if (x >= 744 && x <= 800 && y >= 393 && y <= 420) {
-                        gp.player.pUP = false;
-                        gp.player.pDOWN = false;
-                        gp.player.pRIGHT = false;
-                        gp.player.pLEFT = false;
-                        gp.player.rota[0] = null;
-                        gp.player.rota[1] = null;
-                        gp.player.rota[2] = null;
-                        gp.player.rota[3] = null;
-                        gp.player.rota[4] = null;
-                        gp.player.rota[5] = null;
-                        gp.player.rota[6] = null;
-                        gp.player.rota[7] = null;
-                        gp.player.rota[8] = null;
-                        gp.player.rota[9] = null;
-
-                    }
+                   
                    
 
                     gp.player.pUP = false;
@@ -330,75 +314,92 @@ public class Main {
 
                 }
 
+                 if (x >= 744 && x <= 800 && y >= 393 && y <= 420) {
+                        gp.player.pUP = false;
+                        gp.player.pDOWN = false;
+                        gp.player.pRIGHT = false;
+                        gp.player.pLEFT = false;
+                        gp.player.rota[0] = null;
+                        gp.player.rota[1] = null;
+                        gp.player.rota[2] = null;
+                        gp.player.rota[3] = null;
+                        gp.player.rota[4] = null;
+                        gp.player.rota[5] = null;
+                        gp.player.rota[6] = null;
+                        gp.player.rota[7] = null;
+                        gp.player.rota[8] = null;
+                        gp.player.rota[9] = null;
+
+                    }
                 //MENU DE CONTROLE
                 if (x >= 20 && x <= 70 && y >= 355 && y <= 402) {
 
                     gp.player.rota[0] = null;
 
-                    System.out.println("0");
+                    //System.out.println("0");
                 }
 
                 if (x >= 80 && x <= 130 && y >= 355 && y <= 402) {
 
                     gp.player.rota[1] = null;
 
-                    System.out.println("1");
+                    //System.out.println("1");
                 }
 
                 if (x >= 140 && x <= 190 && y >= 355 && y <= 402) {
 
                     gp.player.rota[2] = null;
 
-                    System.out.println("2");
+                    //System.out.println("2");
                 }
 
                 if (x >= 200 && x <= 250 && y >= 355 && y <= 402) {
 
                     gp.player.rota[3] = null;
 
-                    System.out.println("3");
+                    //System.out.println("3");
                 }
 
                 if (x >= 260 && x <= 310 && y >= 355 && y <= 402) {
 
                     gp.player.rota[4] = null;
 
-                    System.out.println("4");
+                    //System.out.println("4");
                 }
 
                 if (x >= 325 && x <= 372 && y >= 355 && y <= 402) {
 
                     gp.player.rota[5] = null;
 
-                    System.out.println("5");
+                    //System.out.println("5");
                 }
 
                 if (x >= 385 && x <= 435 && y >= 355 && y <= 402) {
 
                     gp.player.rota[6] = null;
 
-                    System.out.println("6");
+                    //System.out.println("6");
                 }
 
                 if (x >= 448 && x <= 496 && y >= 355 && y <= 402) {
 
                     gp.player.rota[7] = null;
 
-                    System.out.println("7");
+                    //System.out.println("7");
                 }
 
                 if (x >= 509 && x <= 558 && y >= 355 && y <= 402) {
 
                     gp.player.rota[8] = null;
 
-                    System.out.println("8");
+                    //System.out.println("8");
                 }
 
                 if (x >= 570 && x <= 620 && y >= 355 && y <= 402) {
 
                     gp.player.rota[9] = null;
 
-                    System.out.println("9");
+                    //System.out.println("9");
                 }
 
             }

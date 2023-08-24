@@ -4,10 +4,14 @@
  */
 package main;
 
+import java.awt.Desktop;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
@@ -19,11 +23,13 @@ import javax.swing.JFrame;
 public class GameWindow {
 
     public JFrame window = new JFrame();
+    public ImageFrame frame = new ImageFrame();
 
     public GameWindow() {
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setResizable(false);
         window.setTitle("Fireman Path");
+        
 
         GamePanel gp = new GamePanel();
 
@@ -38,10 +44,24 @@ public class GameWindow {
                 if (x >= 672 && x <= 728 && y >= 10 && y <= 40) {
 
                     //System.out.println(Arrays.toString(gp.player.rota));
-                    System.out.println("MENU");
+                    //System.out.println("MENU");
+                    frame.setVisible(true);
+                    window.setVisible(false);
+                    window.dispose();
+                    
                 }
                 if (x >= 744 && x <= 800 && y >= 10 && y <= 40) {
-                    System.out.println("AJUDA");
+                    //System.out.println("AJUDA");
+                     String url = "https://www.goole.com.br";
+                        try {
+                            try {
+                                Desktop.getDesktop().browse(new URI(url));
+                            } catch (IOException ex) {
+                                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        } catch (URISyntaxException ex) {
+                            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                        }
                 }
 
                 if (x >= 671 && x <= 728 && y >= 60 && y <= 122) {

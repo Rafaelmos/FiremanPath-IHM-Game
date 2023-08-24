@@ -26,7 +26,7 @@ import tile.TileManager;
  */
 public class GamePanel extends JPanel implements Runnable {
 
-    public int fase = 3;
+    public int fase = 1;
     final int originalTitleSize = 32;
     final int scale = 2;
     public final int tileSize = originalTitleSize * scale;
@@ -228,10 +228,7 @@ public class GamePanel extends JPanel implements Runnable {
             tv4.draw(g2);
             barril1.draw(g2);
             ///          
-            madeira4.fire = false;
-            tv3.fire = false;
-            tv4.fire = false;
-            barril1.fire = false;
+
 
 //
             if (player.x >= 192 && player.x <= 256 && player.y >= 128 && player.y <= 192) {

@@ -447,7 +447,7 @@ public class Main {
 
          */
         ImageFrame frame = new ImageFrame();
-
+        frame.setVisible(true);
         if (frame.isVisible()) {
             frame.addMouseListener(new MouseAdapter() {
                 @Override
@@ -459,7 +459,9 @@ public class Main {
                     if (x >= 234 && x <= 330 && y >= 310 && y <= 346) {
                        // System.out.println(".Play()");
                        GameWindow gameWindow = new GameWindow();
+                       gameWindow.frame = frame;
                        frame.setVisible(false);
+                       frame.dispose();
                     }
                     if (x >= 368 && x <= 464 && y >= 310 && y <= 346) {
 

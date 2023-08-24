@@ -30,7 +30,7 @@ public class ImageFrame extends JFrame {
             e.printStackTrace();
         }
 
-        this.setVisible(true);
+        //this.setVisible(true);
 
     }
 

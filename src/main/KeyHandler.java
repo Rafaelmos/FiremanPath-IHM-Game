@@ -11,50 +11,50 @@ import java.awt.event.KeyListener;
  *
  * @author Rafael
  */
-public class KeyHandler implements KeyListener{
+public class KeyHandler implements KeyListener {
 
     public boolean pUP, pDOWN, pRIGHT, pLEFT;
-    
+
     @Override
     public void keyTyped(KeyEvent e) {
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
-        
+
         int code = e.getKeyCode();
-        if(code == KeyEvent.VK_8){
+        if (code == KeyEvent.VK_8) {
             pUP = true;
         }
-        if(code == KeyEvent.VK_2){
+        if (code == KeyEvent.VK_2) {
             pDOWN = true;
         }
-        if(code == KeyEvent.VK_6){
+        if (code == KeyEvent.VK_6) {
             pRIGHT = true;
         }
-        if(code == KeyEvent.VK_4){
+        if (code == KeyEvent.VK_4) {
             pLEFT = true;
         }
-        
+
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-        
+
         int code = e.getKeyCode();
-        
-         if(code == KeyEvent.VK_8){
+
+        if (code == KeyEvent.VK_8) {
             pUP = false;
         }
-        if(code == KeyEvent.VK_2){
+        if (code == KeyEvent.VK_2) {
             pDOWN = false;
         }
-        if(code == KeyEvent.VK_6){
+        if (code == KeyEvent.VK_6) {
             pRIGHT = false;
         }
-        if(code == KeyEvent.VK_4){
+        if (code == KeyEvent.VK_4) {
             pLEFT = false;
         }
     }
-    
+
 }

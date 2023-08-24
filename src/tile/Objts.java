@@ -48,6 +48,11 @@ public class Objts {
         if (type == 2 && fire == true) {
             tile.image = ImageIO.read(getClass().getResourceAsStream("res/tiles/barrel_fire.png"));
         }
+        if (type == 4) {
+            tile.image = ImageIO.read(getClass().getResourceAsStream("res/tiles/win.png"));
+        }
+        
+       
  
     }
     

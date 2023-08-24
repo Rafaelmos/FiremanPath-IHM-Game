@@ -1,47 +1,30 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package main;
 
-import java.awt.AWTException;
-import java.awt.Desktop;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 
 /**
  *
  * @author Rafael
  */
-public class Main {
+public class GameWindow {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        //System.out.println("Rfael");
-/*
-        JFrame window = new JFrame();
+    public JFrame window = new JFrame();
+
+    public GameWindow() {
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setResizable(false);
         window.setTitle("Fireman Path");
 
-       
-        
-       
-
-        
-        
         GamePanel gp = new GamePanel();
 
         gp.addMouseListener(new MouseAdapter() {
@@ -49,7 +32,7 @@ public class Main {
             public void mouseClicked(MouseEvent e) {
                 int x = e.getX();
                 int y = e.getY();
-                System.out.println("Mouse clicked at (" + x + ", " + y + ")");
+                //System.out.println("Mouse clicked at (" + x + ", " + y + ")");
 
                 // MENU BOTÕES
                 if (x >= 672 && x <= 728 && y >= 10 && y <= 40) {
@@ -152,34 +135,32 @@ public class Main {
                 if (x >= 672 && x <= 728 && y >= 393 && y <= 420) {
                     //System.out.println("PLAY");
 
-                    
-                   // 
+                    // 
                     Robot robot = null;
                     try {
                         robot = new Robot();
-                        
-               
+
                         for (String c : gp.player.rota) {
-                  
+
                             if (c == null) {
                                 //System.out.println("main.Player.update() " + c);
                                 break;
-                            } 
+                            }
                             if (c.equals("up")) {
                                 gp.player.direction = "up";
                                 robot.keyPress(KeyEvent.VK_8);
-                                    if (gp.player.y <= 0) {
-                                        gp.player.y = 0;
-                                    } else {
-                                        gp.player.y -= gp.player.speed;
-                                    }
-                                    robot.keyRelease(KeyEvent.VK_8);
+                                if (gp.player.y <= 0) {
+                                    gp.player.y = 0;
+                                } else {
+                                    gp.player.y -= gp.player.speed;
+                                }
+                                robot.keyRelease(KeyEvent.VK_8);
 
                             }
                             if (c.equals("down")) {
                                 gp.player.direction = "down";
                                 robot.keyPress(KeyEvent.VK_2);
-                                
+
                                 if (gp.player.y >= 256) {
                                     gp.player.y = 256;
                                 } else {
@@ -187,7 +168,7 @@ public class Main {
                                 }
                                 robot.keyRelease(KeyEvent.VK_2);
 
-                            } 
+                            }
                             if (c.equals("right")) {
 
                                 gp.player.direction = "right";
@@ -197,7 +178,7 @@ public class Main {
                                 } else {
                                     gp.player.x += gp.player.speed;
                                 }
-                                    robot.keyRelease(KeyEvent.VK_6);
+                                robot.keyRelease(KeyEvent.VK_6);
 
                             }
                             if (c.equals("left")) {
@@ -214,36 +195,25 @@ public class Main {
                             }
                             if (c.equals("e-red")) {
                                 gp.red = true;
-    
+
                             }
-                            
+
                             if (c.equals("e-yellow")) {
                                 gp.yellow = true;
-                            
+
                             }
-                             if (c.equals("e-black")) {
+                            if (c.equals("e-black")) {
                                 gp.black = true;
-                                
+
                             }
-                    
-                             
 
 // System.out.println("main.Player.update() USANDO EXTINTOR " + c);
-                            
-                        
+                        }
+                    } catch (java.awt.AWTException ex) {
+                        Logger.getLogger(GameWindow.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                    } 
-                    
-                    
-               
-                    catch (AWTException ex) {
-                        Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                    } 
 
-                   
-                    
                     //
-                    
                     /*for (String i : gp.player.rota) {
                         for (String c : gp.player.rota) {
                             gp.player.update();
@@ -303,11 +273,7 @@ public class Main {
                                 System.out.println("main.Player.update() USANDO EXTINTOR " + c);
                             }
                         }
-                    }
-
-                   
-                   
-
+                    }*/
                     gp.player.pUP = false;
                     gp.player.pDOWN = false;
                     gp.player.pRIGHT = false;
@@ -325,23 +291,23 @@ public class Main {
 
                 }
 
-                 if (x >= 744 && x <= 800 && y >= 393 && y <= 420) {
-                        gp.player.pUP = false;
-                        gp.player.pDOWN = false;
-                        gp.player.pRIGHT = false;
-                        gp.player.pLEFT = false;
-                        gp.player.rota[0] = null;
-                        gp.player.rota[1] = null;
-                        gp.player.rota[2] = null;
-                        gp.player.rota[3] = null;
-                        gp.player.rota[4] = null;
-                        gp.player.rota[5] = null;
-                        gp.player.rota[6] = null;
-                        gp.player.rota[7] = null;
-                        gp.player.rota[8] = null;
-                        gp.player.rota[9] = null;
+                if (x >= 744 && x <= 800 && y >= 393 && y <= 420) {
+                    gp.player.pUP = false;
+                    gp.player.pDOWN = false;
+                    gp.player.pRIGHT = false;
+                    gp.player.pLEFT = false;
+                    gp.player.rota[0] = null;
+                    gp.player.rota[1] = null;
+                    gp.player.rota[2] = null;
+                    gp.player.rota[3] = null;
+                    gp.player.rota[4] = null;
+                    gp.player.rota[5] = null;
+                    gp.player.rota[6] = null;
+                    gp.player.rota[7] = null;
+                    gp.player.rota[8] = null;
+                    gp.player.rota[9] = null;
 
-                    }
+                }
                 //MENU DE CONTROLE
                 if (x >= 20 && x <= 70 && y >= 355 && y <= 402) {
 
@@ -425,74 +391,9 @@ public class Main {
 
         window.setLocationRelativeTo(null);
         window.setVisible(true);
-   
-        
 
         //menuPanel.startGameThread();
         gp.startGameThread();
-         */
-
- /*
-              JFrame window2 = new JFrame();
-        window2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window2.setResizable(false);
-        window2.setTitle("Fireman Path");
-
-   
-        MenuPanel menu = new MenuPanel();
-        window2.add(menu);
-        window2.pack();
-        window2.setLocationRelativeTo(null);
-        window2.setVisible(true);
-
-         */
-        ImageFrame frame = new ImageFrame();
-
-        if (frame.isVisible()) {
-            frame.addMouseListener(new MouseAdapter() {
-                @Override
-                public void mouseClicked(MouseEvent e) {
-                    int x = e.getX();
-                    int y = e.getY();
-                    System.out.println("Mouse clicked at (" + x + ", " + y + ")");
-
-                    if (x >= 234 && x <= 330 && y >= 310 && y <= 346) {
-                       // System.out.println(".Play()");
-                       GameWindow gameWindow = new GameWindow();
-                       frame.setVisible(false);
-                    }
-                    if (x >= 368 && x <= 464 && y >= 310 && y <= 346) {
-
-                        //System.out.println(".Ajuda()"); 
-                        String url = "https://www.goole.com.br";
-                        try {
-                            try {
-                                Desktop.getDesktop().browse(new URI(url));
-                            } catch (IOException ex) {
-                                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                            }
-                        } catch (URISyntaxException ex) {
-                            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                        }
-
-
-                    }
-                    if (x >= 496 && x <= 591 && y >= 310 && y <= 346) {
-                        //System.out.println(".Sair()"); 
-                        int result = JOptionPane.showConfirmDialog(null, "Deseja sair?", "Aviso", JOptionPane.OK_CANCEL_OPTION);
-
-                        if (result == JOptionPane.OK_OPTION) {
-                            System.exit(0);
-                        }
-
-                    }
-                }
-
-            });
-
-        }
-
-        
     }
 
 }

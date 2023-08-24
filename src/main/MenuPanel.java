@@ -17,21 +17,19 @@ public class MenuPanel extends JPanel implements Runnable {
 
     final int originalTitleSize = 32;
     final int scale = 2;
-
     public final int tileSize = originalTitleSize * scale;
     final int maxScreenCol = 13;
     final int maxScreenRow = 7;
     final int screenWidth = tileSize * maxScreenCol;
     final int screenHeight = tileSize * maxScreenRow;
     Thread gameThread;
-    Menu menu;
 
     public MenuPanel() {
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
         this.setBackground(Color.black);
         this.setDoubleBuffered(true);
         this.setFocusable(true);
-        this.menu = new Menu(this);
+ 
     }
 
     @Override
@@ -64,7 +62,7 @@ public class MenuPanel extends JPanel implements Runnable {
 
     public void update() {
 
-        menu.update();
+
     }
 
 }

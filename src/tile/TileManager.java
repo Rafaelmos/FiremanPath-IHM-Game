@@ -17,6 +17,7 @@ public class TileManager {
     GamePanel gp;
     Tile[] tile;
     Tile[] inter;
+    Tile end = new Tile();
 
     public TileManager(GamePanel gp) {
         this.gp = gp;
@@ -250,6 +251,8 @@ public class TileManager {
         } else if (gp.player.rota[9] == "e-yellow") {
             g2.drawImage(inter[7].image, 580, 364, 32, 32, null); //9
         }
+        
+        //g2.drawImage(end.image, 432,224, 64,128, null);
 
     }
 

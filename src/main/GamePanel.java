@@ -8,7 +8,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.event.MouseListener;
 import javax.swing.JPanel;
 import tile.TileManager;
 
@@ -31,7 +30,7 @@ public class GamePanel extends JPanel implements Runnable{
     TileManager tileM = new TileManager(this);
     KeyHandler keyH = new KeyHandler();
     Thread gameThread;
-    Player player = new Player(this, keyH);
+    public Player player = new Player(this, keyH);
     
     int playerX = 100;
     int playerY = 100;
@@ -96,6 +95,11 @@ public class GamePanel extends JPanel implements Runnable{
         
         g2.dispose();
     
+    }
+
+    public void repintar() {
+        update();
+        repaint();
     }
     
 }

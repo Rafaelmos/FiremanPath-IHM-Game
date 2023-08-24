@@ -16,20 +16,22 @@ public class Player extends Entity {
 
     GamePanel gp;
     KeyHandler keyH;
+    public String[] rota;
+    public boolean pUP, pDOWN, pRIGHT, pLEFT;
 
     public Player(GamePanel gp, KeyHandler KeyH) {
         this.gp = gp;
         this.keyH = KeyH;
-
         setDefaultValues();
         getPlayerImage();
         direction = "down";
+        this.rota = new String[10];
     }
 
     public void setDefaultValues() {
         x = 128;
         y = 128;
-        speed = 16;
+        speed = 6;
     }
 
     public void getPlayerImage() {
@@ -55,35 +57,41 @@ public class Player extends Entity {
     }
 
     public void update() {
+     
+        /*
         if (gp.keyH.pUP == true) {
             direction = "up";
-            if (y <=0) {
-                y=0;
+            if (y <= 0) {
+                y = 0;
             } else {
-                        y -= speed;
-}
+                y -= speed;
+            }
         }
         if (gp.keyH.pDOWN == true) {
             direction = "down";
-            if (y >=256) {
-                y=256;
-            } else {y += speed;}
+            if (y >= 256) {
+                y = 256;
+            } else {
+                y += speed;
+            }
         }
         if (gp.keyH.pRIGHT == true) {
             direction = "right";
-            if (x >=576) {
-                x=576;
+            if (x >= 576) {
+                x = 576;
             } else {
-            
-            x += speed;}
+
+                x += speed;
+            }
         }
         if (gp.keyH.pLEFT == true) {
             direction = "left";
-            
-            if (x <=0) {
-                x=0;
+
+            if (x <= 0) {
+                x = 0;
             } else {
-            x -= speed;}
+                x -= speed;
+            }
         }
 
         if (gp.keyH.pUP || gp.keyH.pDOWN || gp.keyH.pRIGHT || gp.keyH.pLEFT) {
@@ -105,14 +113,15 @@ public class Player extends Entity {
                 spriteCounter = 0;
             }
         } else {
-         spriteNumber = 1;                     
+            spriteNumber = 1;
         }
+         */
     }
 
     public void draw(Graphics2D g2) {
         //g2.setColor(Color.WHITE);
         //g2.fillRect(x, y, gp.tileSize , gp.tileSize);
-        
+
         BufferedImage image = null;
 
         switch (direction) {
@@ -170,5 +179,6 @@ public class Player extends Entity {
         g2.drawImage(image, x, y, gp.tileSize, gp.tileSize, null);
 
     }
+
 
 }

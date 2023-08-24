@@ -4,9 +4,14 @@
  */
 package main;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.Iterator;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 
 /**
@@ -33,7 +38,7 @@ public class Main {
             public void mouseClicked(MouseEvent e) {
                 int x = e.getX();
                 int y = e.getY();
-                //System.out.println("Mouse clicked at (" + x + ", " + y + ")");
+                System.out.println("Mouse clicked at (" + x + ", " + y + ")");
 
                 // MENU BOTÕES
                 if (x >= 672 && x <= 728 && y >= 10 && y <= 40) {
@@ -136,7 +141,99 @@ public class Main {
                 if (x >= 672 && x <= 728 && y >= 393 && y <= 420) {
                     //System.out.println("PLAY");
 
-                    for (String i : gp.player.rota) {
+                    
+                   // 
+                    Robot robot = null;
+                    try {
+                        robot = new Robot();
+                        
+               
+                        for (String c : gp.player.rota) {
+                            if (c == null) {
+                                //System.out.println("main.Player.update() " + c);
+                                break;
+                            } 
+                            if (c.equals("up")) {
+                                gp.player.direction = "up";
+                                robot.keyPress(KeyEvent.VK_8);
+                                    if (gp.player.y <= 0) {
+                                        gp.player.y = 0;
+                                    } else {
+                                        gp.player.y -= gp.player.speed;
+                                    }
+                                    robot.keyRelease(KeyEvent.VK_8);
+
+                            }
+                            if (c.equals("down")) {
+                                gp.player.direction = "down";
+                                robot.keyPress(KeyEvent.VK_2);
+                                
+                                if (gp.player.y >= 256) {
+                                    gp.player.y = 256;
+                                } else {
+                                    gp.player.y += gp.player.speed;
+                                }
+                                robot.keyRelease(KeyEvent.VK_2);
+
+                            } 
+                            if (c.equals("right")) {
+
+                                gp.player.direction = "right";
+                                robot.keyPress(KeyEvent.VK_6);
+                                if (gp.player.x >= 576) {
+                                    gp.player.x = 576;
+                                } else {
+                                    gp.player.x += gp.player.speed;
+                                }
+                                    robot.keyRelease(KeyEvent.VK_6);
+
+                            }
+                            if (c.equals("left")) {
+                                gp.player.direction = "left";
+                                robot.keyPress(KeyEvent.VK_4);
+
+                                if (gp.player.x <= 0) {
+                                    gp.player.x = 0;
+                                } else {
+                                    gp.player.x -= gp.player.speed;
+                                }
+                                robot.keyRelease(KeyEvent.VK_4);
+
+                            }
+                            if (c.equals("e-red")) {
+                                gp.red = true;
+                                System.out.println(".                                gp.red = true;\n" +
+"()");
+                                
+                             
+                            }
+                            
+                            if (c.equals("e-yellow")) {
+                                gp.yellow = true;
+                            
+                            }
+                             if (c.equals("e-black")) {
+                                gp.black = true;
+                            }     
+                             
+
+// System.out.println("main.Player.update() USANDO EXTINTOR " + c);
+                            
+                        
+                    }
+                    } 
+                    
+                    
+               
+                    catch (AWTException ex) {
+                        Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                    } 
+
+                   
+                    
+                    //
+                    
+                    /*for (String i : gp.player.rota) {
                         for (String c : gp.player.rota) {
                             gp.player.update();
                             gp.repintar();
@@ -195,7 +292,7 @@ public class Main {
                                 System.out.println("main.Player.update() USANDO EXTINTOR " + c);
                             }
                         }
-                    }
+                    }*/
 
                     if (x >= 744 && x <= 800 && y >= 393 && y <= 420) {
                         gp.player.pUP = false;
@@ -214,6 +311,7 @@ public class Main {
                         gp.player.rota[9] = null;
 
                     }
+                   
 
                     gp.player.pUP = false;
                     gp.player.pDOWN = false;
@@ -318,7 +416,7 @@ public class Main {
 
         //menuPanel.startGameThread();
         gp.startGameThread();
-
+        
     }
 
 }

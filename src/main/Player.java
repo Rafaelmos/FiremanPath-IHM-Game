@@ -18,6 +18,7 @@ public class Player extends Entity {
     KeyHandler keyH;
     public String[] rota;
     public boolean pUP, pDOWN, pRIGHT, pLEFT;
+    int x, y;
 
     public Player(GamePanel gp, KeyHandler KeyH) {
         this.gp = gp;
@@ -29,9 +30,9 @@ public class Player extends Entity {
     }
 
     public void setDefaultValues() {
-        x = 128;
-        y = 128;
-        speed = 6;
+        this.x = 128;
+        this.y = 128;
+        speed = 64;
     }
 
     public void getPlayerImage() {
@@ -57,8 +58,35 @@ public class Player extends Entity {
     }
 
     public void update() {
-     
-        /*
+
+       
+
+       
+       
+        /*if (pUP || pDOWN || pRIGHT || pLEFT) {
+                spriteCounter++;
+                if (spriteCounter > 2) {
+                    switch (spriteNumber) {
+                        case 1:
+                            spriteNumber = 2;
+                            break;
+                        case 2:
+                            spriteNumber = 3;
+                            break;
+                        case 3:
+                            spriteNumber = 1;
+                            break;
+                        default:
+                            break;
+                    }
+                    spriteCounter = 0;
+                }
+            } else {
+                spriteNumber = 1;
+            }*/
+                    
+                    
+       
         if (gp.keyH.pUP == true) {
             direction = "up";
             if (y <= 0) {
@@ -115,7 +143,7 @@ public class Player extends Entity {
         } else {
             spriteNumber = 1;
         }
-         */
+         
     }
 
     public void draw(Graphics2D g2) {

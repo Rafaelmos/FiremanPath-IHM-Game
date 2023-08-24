@@ -23,16 +23,16 @@ public class KeyHandler implements KeyListener{
     public void keyPressed(KeyEvent e) {
         
         int code = e.getKeyCode();
-        if(code == KeyEvent.VK_W){
+        if(code == KeyEvent.VK_8){
             pUP = true;
         }
-        if(code == KeyEvent.VK_S){
+        if(code == KeyEvent.VK_2){
             pDOWN = true;
         }
-        if(code == KeyEvent.VK_D){
+        if(code == KeyEvent.VK_6){
             pRIGHT = true;
         }
-        if(code == KeyEvent.VK_A){
+        if(code == KeyEvent.VK_4){
             pLEFT = true;
         }
         
@@ -43,16 +43,16 @@ public class KeyHandler implements KeyListener{
         
         int code = e.getKeyCode();
         
-         if(code == KeyEvent.VK_W){
+         if(code == KeyEvent.VK_8){
             pUP = false;
         }
-        if(code == KeyEvent.VK_S){
+        if(code == KeyEvent.VK_2){
             pDOWN = false;
         }
-        if(code == KeyEvent.VK_D){
+        if(code == KeyEvent.VK_6){
             pRIGHT = false;
         }
-        if(code == KeyEvent.VK_A){
+        if(code == KeyEvent.VK_4){
             pLEFT = false;
         }
     }

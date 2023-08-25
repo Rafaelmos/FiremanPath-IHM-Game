@@ -170,6 +170,7 @@ public class GameWindow {
                                 if (gp.player.y <= 0) {
                                     gp.player.y = 0;
                                 } else {
+
                                     gp.player.y -= gp.player.speed;
                                 }
 

@@ -105,7 +105,6 @@ public class GamePanel extends JPanel implements Runnable {
 
     public void update() {
         try {
-            p.update();
             if (fase == 1) {
                 madeira1.update();
                 madeira2.update();
@@ -122,6 +121,8 @@ public class GamePanel extends JPanel implements Runnable {
                 tv4.update();
                 barril1.update();
             }
+            p.update();
+
             win.update();
 
         } catch (IOException ex) {
@@ -138,8 +139,7 @@ public class GamePanel extends JPanel implements Runnable {
 
         tileM.draw(g2);
 
-        player.draw(g2);
-        p.draw(g2);
+        
         if (fase == 1) {
 
             madeira1.draw(g2);
@@ -302,6 +302,8 @@ public class GamePanel extends JPanel implements Runnable {
             }
 
         }
+        player.draw(g2);
+        p.draw(g2);
 
         g2.dispose();
 

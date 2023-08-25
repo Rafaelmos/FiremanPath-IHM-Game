@@ -27,7 +27,7 @@ import tile.TileManager;
 public class GamePanel extends JPanel implements Runnable {
 
     public GameWindow gamewindow;
-    public int fase = 1;
+    public int fase = 3;
     final int originalTitleSize = 32;
     final int scale = 2;
     public final int tileSize = originalTitleSize * scale;
@@ -284,6 +284,8 @@ public class GamePanel extends JPanel implements Runnable {
             this.yellow = false;
             this.black = false;
 
+        player.draw(g2);
+        p.draw(g2);
             if (madeira4.fire == false && madeira5.fire == false && tv3.fire == false && tv4.fire == false && barril1.fire == false) {
                 g2.drawImage(win.tile.image, 108, 64, 512, 256, null);
 
@@ -302,8 +304,7 @@ public class GamePanel extends JPanel implements Runnable {
             }
 
         }
-        player.draw(g2);
-        p.draw(g2);
+
 
         g2.dispose();
 

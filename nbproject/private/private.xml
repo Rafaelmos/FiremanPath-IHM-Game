@@ -4,11 +4,16 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Rafael/Documents/NetBeansProjects/JavaApplication1/src/main/Player.java</file>
+            <file>file:/C:/Users/Rafael/Documents/NetBeansProjects/JavaApplication1/src/main/ImageFrame.java</file>
+            <file>file:/C:/Users/Rafael/Documents/NetBeansProjects/JavaApplication1/src/tile/Objts.java</file>
+            <file>file:/C:/Users/Rafael/Documents/NetBeansProjects/JavaApplication1/src/tile/res/tiles/down.png</file>
             <file>file:/C:/Users/Rafael/Documents/NetBeansProjects/JavaApplication1/src/main/Main.java</file>
             <file>file:/C:/Users/Rafael/Documents/NetBeansProjects/JavaApplication1/src/main/KeyHandler.java</file>
             <file>file:/C:/Users/Rafael/Documents/NetBeansProjects/JavaApplication1/src/main/GamePanel.java</file>
             <file>file:/C:/Users/Rafael/Documents/NetBeansProjects/JavaApplication1/src/tile/TileManager.java</file>
+            <file>file:/C:/Users/Rafael/Documents/NetBeansProjects/JavaApplication1/src/main/MenuPanel.java</file>
             <file>file:/C:/Users/Rafael/Documents/NetBeansProjects/JavaApplication1/src/main/Entity.java</file>
+            <file>file:/C:/Users/Rafael/Documents/NetBeansProjects/JavaApplication1/src/main/GameWindow.java</file>
         </group>
     </open-files>
 </project-private>

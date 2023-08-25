@@ -24,6 +24,7 @@ public class GameWindow {
 
     public JFrame window = new JFrame();
     public ImageFrame frame = new ImageFrame();
+    GamePanel gp;
 
     public GameWindow() {
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -31,7 +32,7 @@ public class GameWindow {
         window.setTitle("Fireman Path");
         
 
-        GamePanel gp = new GamePanel();
+        GamePanel gp = new GamePanel( this);
 
         gp.addMouseListener(new MouseAdapter() {
             @Override
@@ -52,7 +53,7 @@ public class GameWindow {
                 }
                 if (x >= 744 && x <= 800 && y >= 10 && y <= 40) {
                     //System.out.println("AJUDA");
-                     String url = "https://www.goole.com.br";
+                     String url = "https://youtu.be/GoMAnFjZ4dM";
                         try {
                             try {
                                 Desktop.getDesktop().browse(new URI(url));
@@ -156,10 +157,7 @@ public class GameWindow {
                     //System.out.println("PLAY");
 
                     // 
-                    Robot robot = null;
-                    try {
-                        robot = new Robot();
-
+                   
                         for (String c : gp.player.rota) {
 
                             if (c == null) {
@@ -168,49 +166,43 @@ public class GameWindow {
                             }
                             if (c.equals("up")) {
                                 gp.player.direction = "up";
-                                robot.keyPress(KeyEvent.VK_8);
+                                //robot.keyPress(KeyEvent.VK_8);
                                 if (gp.player.y <= 0) {
                                     gp.player.y = 0;
                                 } else {
                                     gp.player.y -= gp.player.speed;
                                 }
-                                robot.keyRelease(KeyEvent.VK_8);
 
                             }
                             if (c.equals("down")) {
                                 gp.player.direction = "down";
-                                robot.keyPress(KeyEvent.VK_2);
 
                                 if (gp.player.y >= 256) {
                                     gp.player.y = 256;
                                 } else {
                                     gp.player.y += gp.player.speed;
                                 }
-                                robot.keyRelease(KeyEvent.VK_2);
 
                             }
                             if (c.equals("right")) {
 
                                 gp.player.direction = "right";
-                                robot.keyPress(KeyEvent.VK_6);
+                                //robot.keyPress(KeyEvent.VK_6);
                                 if (gp.player.x >= 576) {
                                     gp.player.x = 576;
                                 } else {
                                     gp.player.x += gp.player.speed;
                                 }
-                                robot.keyRelease(KeyEvent.VK_6);
 
                             }
                             if (c.equals("left")) {
                                 gp.player.direction = "left";
-                                robot.keyPress(KeyEvent.VK_4);
 
                                 if (gp.player.x <= 0) {
                                     gp.player.x = 0;
                                 } else {
                                     gp.player.x -= gp.player.speed;
                                 }
-                                robot.keyRelease(KeyEvent.VK_4);
 
                             }
                             if (c.equals("e-red")) {
@@ -229,9 +221,7 @@ public class GameWindow {
 
 // System.out.println("main.Player.update() USANDO EXTINTOR " + c);
                         }
-                    } catch (java.awt.AWTException ex) {
-                        Logger.getLogger(GameWindow.class.getName()).log(Level.SEVERE, null, ex);
-                    }
+                    
 
                     //
                     /*for (String i : gp.player.rota) {
@@ -326,7 +316,6 @@ public class GameWindow {
                     gp.player.rota[7] = null;
                     gp.player.rota[8] = null;
                     gp.player.rota[9] = null;
-
                 }
                 //MENU DE CONTROLE
                 if (x >= 20 && x <= 70 && y >= 355 && y <= 402) {

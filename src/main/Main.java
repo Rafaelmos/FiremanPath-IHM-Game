@@ -454,7 +454,7 @@ public class Main {
                 public void mouseClicked(MouseEvent e) {
                     int x = e.getX();
                     int y = e.getY();
-                    System.out.println("Mouse clicked at (" + x + ", " + y + ")");
+                    //System.out.println("Mouse clicked at (" + x + ", " + y + ")");
 
                     if (x >= 234 && x <= 330 && y >= 310 && y <= 346) {
                        // System.out.println(".Play()");
@@ -466,7 +466,7 @@ public class Main {
                     if (x >= 368 && x <= 464 && y >= 310 && y <= 346) {
 
                         //System.out.println(".Ajuda()"); 
-                        String url = "https://www.goole.com.br";
+                        String url = "https://youtu.be/GoMAnFjZ4dM";
                         try {
                             try {
                                 Desktop.getDesktop().browse(new URI(url));

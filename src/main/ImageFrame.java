@@ -23,9 +23,9 @@ public class ImageFrame extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(832, 448);
         setLocationRelativeTo(null);
+        setResizable(false);
         try {
             image = ImageIO.read(getClass().getResource("res/menu/gamestart.png"));
-
         } catch (IOException e) {
             e.printStackTrace();
         }

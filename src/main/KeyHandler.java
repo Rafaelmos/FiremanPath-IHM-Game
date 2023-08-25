@@ -22,7 +22,7 @@ public class KeyHandler implements KeyListener {
     @Override
     public void keyPressed(KeyEvent e) {
 
-        int code = e.getKeyCode();
+       /* int code = e.getKeyCode();
         if (code == KeyEvent.VK_8) {
             pUP = true;
         }
@@ -35,13 +35,13 @@ public class KeyHandler implements KeyListener {
         if (code == KeyEvent.VK_4) {
             pLEFT = true;
         }
-
+*/
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
 
-        int code = e.getKeyCode();
+       /* int code = e.getKeyCode();
 
         if (code == KeyEvent.VK_8) {
             pUP = false;
@@ -54,7 +54,7 @@ public class KeyHandler implements KeyListener {
         }
         if (code == KeyEvent.VK_4) {
             pLEFT = false;
-        }
+        }*/
     }
 
 }

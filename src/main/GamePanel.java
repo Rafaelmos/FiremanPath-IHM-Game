@@ -26,6 +26,7 @@ import tile.TileManager;
  */
 public class GamePanel extends JPanel implements Runnable {
 
+    public GameWindow gamewindow;
     public int fase = 1;
     final int originalTitleSize = 32;
     final int scale = 2;
@@ -42,11 +43,12 @@ public class GamePanel extends JPanel implements Runnable {
     KeyHandler keyH = new KeyHandler();
     Thread gameThread;
     public Player player = new Player(this, keyH);
-    int playerX = 100;
-    int playerY = 100;
+    public int playerX = 100;
+    public int playerY = 100;
     int playerSpeed = 8;
 
     Objts win = new Objts(this, 4, 432, 224);
+    Objts p = new Objts(this, 5, 128, 128);
 
     Objts madeira1 = new Objts(this, 0, 20, 40);
     Objts madeira2 = new Objts(this, 0, 212, 168);
@@ -61,12 +63,13 @@ public class GamePanel extends JPanel implements Runnable {
     Objts tv4 = new Objts(this, 1, 340, 40);
     Objts barril1 = new Objts(this, 2, 450, 120);
 
-    public GamePanel() {
+    public GamePanel(GameWindow gamewindow) {
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
         this.setBackground(Color.black);
         this.setDoubleBuffered(true);
         this.addKeyListener(keyH);
         this.setFocusable(true);
+        this.gamewindow = gamewindow;
 
     }
 
@@ -101,8 +104,8 @@ public class GamePanel extends JPanel implements Runnable {
     }
 
     public void update() {
-        player.update();
         try {
+            p.update();
             if (fase == 1) {
                 madeira1.update();
                 madeira2.update();
@@ -134,8 +137,9 @@ public class GamePanel extends JPanel implements Runnable {
         Graphics2D g2 = (Graphics2D) g;
 
         tileM.draw(g2);
-        player.draw(g2);
 
+        player.draw(g2);
+        p.draw(g2);
         if (fase == 1) {
 
             madeira1.draw(g2);
@@ -228,8 +232,6 @@ public class GamePanel extends JPanel implements Runnable {
             tv4.draw(g2);
             barril1.draw(g2);
             ///          
-
-
 //
             if (player.x >= 192 && player.x <= 256 && player.y >= 128 && player.y <= 192) {
 
@@ -288,7 +290,12 @@ public class GamePanel extends JPanel implements Runnable {
                 this.addMouseListener(new MouseAdapter() {
                     @Override
                     public void mouseClicked(MouseEvent e) {
-                        System.exit(0);
+                     
+                            gamewindow.frame.setVisible(true);  
+                            gamewindow.window.setVisible(false);
+                            gamewindow.window.dispose();
+
+                        
                     }
                 });
 

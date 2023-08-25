@@ -52,6 +52,11 @@ public class Objts {
             tile.image = ImageIO.read(getClass().getResourceAsStream("res/tiles/win.png"));
         }
         
+        if (type == 5) {
+            tile.image = ImageIO.read(getClass().getResourceAsStream("res/tiles/down_1.png"));
+        }
+        
+       
        
  
     }
@@ -69,6 +74,23 @@ public class Objts {
         if (type == 2 && fire == false) {
             tile.image = ImageIO.read(getClass().getResourceAsStream("res/tiles/barrel.png"));
         }
+         if (type == 5 ) {
+            this.x = gp.player.x;
+            this.y = gp.player.y;
+             if (gp.player.direction == "up") {
+                tile.image = ImageIO.read(getClass().getResourceAsStream("res/tiles/up_1.png"));
+             } else
+             if (gp.player.direction == "down") {
+                tile.image = ImageIO.read(getClass().getResourceAsStream("res/tiles/down_1.png"));
+             } else
+             if (gp.player.direction == "left") {
+                tile.image = ImageIO.read(getClass().getResourceAsStream("res/tiles/left_1.png"));
+             } else
+             if (gp.player.direction == "right") {
+                tile.image = ImageIO.read(getClass().getResourceAsStream("res/tiles/right_1.png"));
+             }
+        }
+        
         
         
 

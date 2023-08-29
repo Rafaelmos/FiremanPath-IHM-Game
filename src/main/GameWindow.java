@@ -5,8 +5,6 @@
 package main;
 
 import java.awt.Desktop;
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;

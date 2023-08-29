@@ -5,7 +5,6 @@
 package tile;
 
 import java.awt.Graphics2D;
-import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,14 +15,15 @@ import main.GamePanel;
  *
  * @author Rafael
  */
-public class Objts {     
+public class Objts {
+
     GamePanel gp;
     public int type; //0 = madeira, 1= eletronico, 2= oleo.
     public Tile tile;
-    public boolean  fire = true;
-    public int x,y;
+    public boolean fire = true;
+    public int x, y;
 
-    public Objts(GamePanel gp,int type, int x, int y) {
+    public Objts(GamePanel gp, int type, int x, int y) {
         this.gp = gp;
         this.type = type;
         this.x = x;
@@ -35,9 +35,9 @@ public class Objts {
             Logger.getLogger(Objts.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-  
+
     public void getTileImage(int type) throws IOException {
-        
+
         if (type == 0 && fire == true) {
             tile.image = ImageIO.read(getClass().getResourceAsStream("res/tiles/chair_fire.png"));
         }
@@ -51,19 +51,15 @@ public class Objts {
         if (type == 4) {
             tile.image = ImageIO.read(getClass().getResourceAsStream("res/tiles/win.png"));
         }
-        
+
         if (type == 5) {
             tile.image = ImageIO.read(getClass().getResourceAsStream("res/tiles/down_1.png"));
         }
-        
-       
-       
- 
+
     }
-    
-    
-        public void update() throws IOException {
-        
+
+    public void update() throws IOException {
+
         if (type == 0 && fire == false) {
             tile.image = ImageIO.read(getClass().getResourceAsStream("res/tiles/chair.png"));
         }
@@ -74,40 +70,26 @@ public class Objts {
         if (type == 2 && fire == false) {
             tile.image = ImageIO.read(getClass().getResourceAsStream("res/tiles/barrel.png"));
         }
-         if (type == 5 ) {
+        if (type == 5) {
             this.x = gp.player.x;
             this.y = gp.player.y;
-             if (gp.player.direction == "up") {
+            if (gp.player.direction == "up") {
                 tile.image = ImageIO.read(getClass().getResourceAsStream("res/tiles/up_1.png"));
-             } else
-             if (gp.player.direction == "down") {
+            } else if (gp.player.direction == "down") {
                 tile.image = ImageIO.read(getClass().getResourceAsStream("res/tiles/down_1.png"));
-             } else
-             if (gp.player.direction == "left") {
+            } else if (gp.player.direction == "left") {
                 tile.image = ImageIO.read(getClass().getResourceAsStream("res/tiles/left_1.png"));
-             } else
-             if (gp.player.direction == "right") {
+            } else if (gp.player.direction == "right") {
                 tile.image = ImageIO.read(getClass().getResourceAsStream("res/tiles/right_1.png"));
-             }
+            }
         }
-        
-        
-        
 
- 
     }
-    
-    
+
     public void draw(Graphics2D g2) {
-        
-        
-        
+
         g2.drawImage(tile.image, x, y, gp.tileSize, gp.tileSize, null);
-        
-        
+
     }
 
-
-    
-    
 }

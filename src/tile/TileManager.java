@@ -23,7 +23,6 @@ public class TileManager {
         this.gp = gp;
         this.tile = new Tile[10];
         this.inter = new Tile[10];
-
         getTileImage();
     }
 
@@ -52,7 +51,6 @@ public class TileManager {
             inter[7].image = ImageIO.read(getClass().getResourceAsStream("res/tiles/e-yellow.png"));
             inter[8] = new Tile();
             inter[8].image = ImageIO.read(getClass().getResourceAsStream("res/tiles/e-black.png"));
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -80,7 +78,7 @@ public class TileManager {
         } else if (gp.player.rota[0] == "e-yellow") {
             g2.drawImage(inter[7].image, 29, 364, 32, 32, null);  //1
         }
-        
+
         if (gp.player.rota[1] == null) {
             g2.clearRect(87, 364, 32, 32);
 
@@ -100,8 +98,6 @@ public class TileManager {
         } else if (gp.player.rota[1] == "e-yellow") {
             g2.drawImage(inter[7].image, 87, 364, 32, 32, null);  //0
         }
-
-        
 
         if (gp.player.rota[2] == null) {
             g2.clearRect(148, 364, 32, 32); //2
@@ -251,9 +247,8 @@ public class TileManager {
         } else if (gp.player.rota[9] == "e-yellow") {
             g2.drawImage(inter[7].image, 580, 364, 32, 32, null); //9
         }
-        
-        //g2.drawImage(end.image, 432,224, 64,128, null);
 
+        //g2.drawImage(end.image, 432,224, 64,128, null);
     }
 
     public void draw(Graphics2D g2) {
@@ -313,7 +308,6 @@ public class TileManager {
         g2.drawImage(tile[0].image, 512, 256, gp.tileSize, gp.tileSize, null);
         g2.drawImage(tile[0].image, 576, 256, gp.tileSize, gp.tileSize, null);
 
-        //g2.drawImage(tile[1].image,  576,256, gp.tileSize, gp.tileSize, null);
         g2.drawImage(inter[0].image, 640, 0, 192, 576, null); //menu direito
         g2.drawImage(inter[1].image, 0, 320, 640, 128, null); //menu esquerdo
 
